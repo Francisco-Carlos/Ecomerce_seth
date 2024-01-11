@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/head_basic.css' %}">
+    <link rel="stylesheet" href="{% static 'css/descricao.css' %}">
+    <link rel="stylesheet" href="{% static 'css/produtos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dashbord.css'%}">
+    <title>Seth</title>
+</head>
+{% block style %}
+{% endblock %}
+<body>
+    <header class="head_basic">
+        <div class="item_basic"><a href="{% url 'Index' %}"><img class="Icone"  src="{% static 'Img/Icone.png' %}" alt="icone"></a></div>
+        <div class="item_basic"><img class="Icone"  src="{% static 'Img/Icone_texto.png' %}" alt="Image do frase"><p class="Nome_site">Seth Perditor vitae</p></div>
+        <div class="btn_basic">
+            {% if user.is_authenticated %}
+                <a href="{% url 'Dashbord' %}">Darshbord</a>
+                <a href="{% url 'Sair' %}">Sair</a>
+            {% else %}
+                <a href="{% url 'Login' %}">login</a>
+                <a href="{% url 'Cadastrar' %}">cadastrar</a></div>
+            {% endif%}
+    </header>
+    <nav class="nav_basic">
+        <a href="{% url 'Produto' 'computador' %}">Computadores</a>
+        <a href="{% url 'Produto' 'teclado' %}">Teclados</a>
+        <a href="{% url 'Produto' 'monitor'%}">monitores</a>
+        <a href="{% url 'Produto' 'cadeira' %}">Cadeiras</a>
+        <a href="{% url 'Produto' 'notebook'%}">Notebook</a>
+    </nav>
+    {% block content %}
+    {% endblock%}
+</body>
+</html>

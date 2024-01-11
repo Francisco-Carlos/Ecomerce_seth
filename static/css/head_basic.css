@@ -1,0 +1,33 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.head_basic{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+}
+.nav_basic{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: rgb(37, 37, 37);
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.item_basic{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.btn_basic{ 
+    display: flex;
+    gap: 10px;
+
+}

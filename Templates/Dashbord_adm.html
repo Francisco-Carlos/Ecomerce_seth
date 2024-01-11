@@ -1,0 +1,253 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js"></script>
+    <title>Seth_Adm</title>
+</head>
+
+<style>
+    body {font-family: Arial;}
+    
+    /* Style the tab */
+    .tab {
+      float: left;
+      width: 10%;
+      height: 300px;
+    }
+    
+    /* Style the buttons inside the tab */
+    .tab button {
+      display: block;
+      background-color: transparent;
+      color: black;
+      padding: 22px 16px;
+      width: 100%;
+      border: none;
+      outline: none;
+      text-align: center;
+      cursor: pointer;
+      font-size: 25px;
+    }
+    
+    /* Change background color of buttons on hover */
+    .tab button:hover {
+      background-color: #000000;
+      color: rgb(255, 255, 255);
+      border-radius: 8%;
+    }
+    
+    /* Create an active/current tablink class */
+    .tab button.active {
+      background-color: #ccc;
+    }
+    
+    /* Style the tab content */
+    .tabcontent {
+      float: left;
+      padding: 0px 12px;
+     
+      width: 50%;
+      border-left: none;
+      height: 400px;
+      display: none;
+    }
+
+    .tble{
+        border-collapse: collapse;
+        width: 100%;
+        border: 1px solid #ddd;
+        font-size: 18px;
+    }
+    .tble th, .tble td{
+        text-align: center;
+        padding: 12px;
+    }
+    .tble th{
+        font-family: 'Lobster', cursive;
+        background-color: black;
+        font-size: 20px;
+        color: white;
+        
+    }
+    .tble tr{
+        border-bottom: 1px solid #ddd;
+        transition: 3s;
+    }
+    .tble tr:hover{
+        font-size: 28px;
+        background-color: rgb(0, 0, 0);
+        color: #ffffff;
+    }
+    h1{
+        text-align: center;
+        font-family: 'Lobster', cursive;
+        color: #ffffff;
+        background-color: #000000;
+        padding: 10px;
+        margin-top: 15px;
+    }
+    form{
+        border: solid 1px black;
+        border-radius: 10px;
+        width: 400px;
+        height: 250px;
+        margin-left: 20%;
+        padding: 20px;
+
+    }
+    .Lab_prod{
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: #000000;
+        text-align: left;
+        font-size: 20px;
+
+    }
+    .Lab_quant{
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: #000000;
+        text-align: left;
+        font-size: 20px;
+    }
+    .sel_prod{
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        color: #000000;
+        font-size: 15px;
+        border-radius: 8px;
+    }
+    .Inp_quant{
+        width: 300px;
+        border-radius: 8px;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+    .btn_quant{
+        width: 100px;
+        border-radius: 8px;
+        padding: 5px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 15px;
+        color: #000000;
+        background-color: rgb(54, 54, 231);
+        transition: 2s;
+    }
+    .btn_quant:hover{
+        background-color: rgb(3, 131, 3);
+        font-size: 20px;
+    }
+    </style>
+
+<body>
+    
+    <h1>Seth </h1>
+    <div class="tab">
+        <button class="tablinks" onclick="openDados(event,'Estoque')">Estoque</button>
+        <button class="tablinks" onclick="openDados(event,'Lucro')">Ganhos</button>
+        <button class="tablinks" onclick="openDados(event,'Fornecedor')">Fornecedor</button>
+    </div>
+    <div id="Estoque" class="tabcontent">
+        <table class="tble">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Quantidade</th>
+                    <th>Preço</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for esq in estoque %}
+                    <tr>
+                        <td>
+                            {{ esq.Nome_produto }}
+                        </td>
+                        <td>
+                            {% if esq.Quantidade < 100 %}
+                                <p style="color:red">{{esq.Quantidade}}</p>
+                                {% else %}
+                                {{esq.Quantidade}}
+                            {% endif %}
+                            
+                        </td>
+                        <td>
+                            R$:{{esq.preco}}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <img src="data:image/png;base64, {{Grafico_esq|safe}}">
+        
+    </div>
+    <div id="Lucro" class="tabcontent">
+        <table class="tble">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Valor</th>
+                    <th>Data da compra</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for luc in Lucro %}
+                    <tr>
+                        <td>
+                            {{ luc.Nome_do_produto }}
+                        </td>
+                        <td>
+                            R$:{{luc.Valor}}
+                        </td>
+                        <td>
+                            {{luc.Data}}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <img src="data:image/png;base64, {{Grafico_luc|safe}}">
+    </div>
+
+    <div id="Fornecedor" class="tabcontent">
+        <form   action="{% url 'Fornecedor' %}" method="post">
+            <h2>Compra de Produtos</h2>
+            <hr>
+            {% csrf_token %}
+            <div>
+                <label  class="Lab_prod" for="NomProd">Nome do produtos</label>
+                <select  class="sel_prod" name="prod_list" id="est">
+                    <option value="" selected="selected">Selecione </option>
+                    {% for est in estoque %}
+                        <option value="{{est.id}}" >{{est.Nome_produto}}</option>
+                    {% endfor %}
+                </select>
+                <hr>
+            </div>
+            <div>
+                <label class="Lab_quant" for="Quant">Quantidade</label>
+                <input class="Inp_quant"  type="number" for="Quant" name="Quant">
+            </div>
+            <hr>
+            <button class="btn_quant" type="submit">Comprar</button>
+        </form>
+    </div>
+    
+    
+    <script>
+        function openDados(evt,Dados) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(Dados).style.display = 'block';
+            evt.correntTarget.className += 'active';
+        }
+    </script>
+</body>
+</html>

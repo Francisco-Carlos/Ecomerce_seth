@@ -1,0 +1,64 @@
+
+{% load static %}
+<style>
+    .titulo{
+        color:red;
+    }
+    body{
+        background-image: linear-gradient(45deg, black,rgb(63, 0, 0),blue);
+        background-size: 300% 300%;
+        animation: bg-anim 5s infinite alternate;
+    }
+    .tela_login{
+        background-color: rgb(17, 17, 17);
+        position: absolute;
+        top:60%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        padding: 20px;
+        border-radius: 15px;
+
+    }
+    input{
+        padding: 15px;
+        border: none;
+        outline: none;
+        font-size: 15px;
+        
+    }
+    .btn-env{
+        background-color: rgb(65, 65, 80);
+        width: 50%;
+        padding: 10px;
+        border-radius: 15px;
+    }
+    @keyframes bg-anim {
+    0%{
+        background-position:left;
+    }
+    50%{
+        background-position:right;
+    }
+    100%{
+        background-position:left;
+    }
+        
+    }
+</style>
+    <div class="tela_login">
+        <h1 class="titulo">Seth Perditor vitae <br>Administrador</h1>
+        <form method="post" accept="{% url 'Login_adm' %}">
+            {% csrf_token %}
+            <div>
+                <input type="email" name="Email" placeholder="Email">
+            </div>
+            <br><br>
+            <div>
+                <input type="password" name="Senha" placeholder="Senha">
+            </div>
+            <br>
+            <button class="btn-env" type="submit">Acessar</button>
+        </form>
+    </div>
+    
+

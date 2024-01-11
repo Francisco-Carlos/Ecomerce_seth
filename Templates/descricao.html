@@ -1,0 +1,47 @@
+{% extends 'head_basic.html' %}
+{% block content %}
+{% load static %}
+    
+    <section class="descr_dados">
+        <div>
+            <img class="img_desc" src="{{ produto.img.url }}" alt="" >
+        </div>
+        <div class="dados">
+            <strong >{{produto.Nome_produto}}</strong>
+            <hr class="hrs">
+            <p style="padding: 30px;">R$:{{produto.preco}}</p>
+            <hr class="hrs">
+            <strong>Descrição</strong>
+            <p>{{produto.Descricao}}</p>
+        </div>
+        <div class="venda">
+            <p style="font-size: 18px;">R$:{{produto.preco}}</p>
+            <p style="color: red;">Entrega ate 5 dias ulteis</p>
+            <form method="post"  action="{% url 'Compra' produto.id %}">
+                {% csrf_token %}
+                <label>Quatidade</label>
+                <input style="width: 40px;" type="number" value="1" name="Qt">
+                <br>
+                {%if user.is_authenticated %}
+                    <button type="submit">Comprar</button>
+                {% else %}
+                    <button> Login </button>
+                {% endif %}
+                <br>
+                <button  style="background-color: blue;" type="submit">Carrinho</button>
+            </form>
+        </div>
+    </section>
+    <hr width="100%">
+    <h2 style="text-align: center; font-size: 35px; padding: 20px;">Produtos também vistos</h2>
+    <section class="descr_cont">
+        {% for prod in list_prod %}
+            <div>
+                <a href="{% url 'Descricao' prod.id %}">
+                    <img class="img_prod" src="{{prod.img.url }}" alt="" >
+                </a>
+            </div>
+        {% endfor %}
+    </section>
+
+{% endblock %}

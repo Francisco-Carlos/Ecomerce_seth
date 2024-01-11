@@ -1,0 +1,32 @@
+{% extends 'head_basic.html' %}
+{% block content %}
+{% load static %}
+<style>
+    body{
+    background:black;
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-background-size:cover;
+    -moz-background-size: cover;
+    -moz-background-size:cover;
+    background-size: cover;
+    }
+</style>
+    <body>
+        <div class="container" >
+
+            <section class="main_conteudo  ">
+                {% for prod in produto %}
+                    <div class="itens">
+                        <a href="{% url 'Descricao' prod.id %}">
+                            <img class="img_index" src="{{prod.img.url}}" alt="" >
+                        </a>
+                        <p class="ps">{{prod.Nome_produto}}</p>
+
+                    </div>
+                {% endfor %}
+            </section>
+        </div>
+    </body>
+
+{% endblock %}

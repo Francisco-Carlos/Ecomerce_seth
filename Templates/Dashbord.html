@@ -1,0 +1,33 @@
+{% extends 'head_basic.html' %}
+{% block content %}
+{% load static %}
+
+    <h2 class="Ds_h2">Ola,  {{user.username}}</h2>
+    <hr>
+    <p class="Ds_p">Produtos comprados</p>
+    <div class="Ds_container">
+        <section class="Ds_conteudo">
+            {% for cliente in Clin %}
+                {% for produto in Prod %}
+                    {% if cliente.Produto == produto.Nome_produto %}
+                        <div class="Ds_item">
+                            <a href="{% url 'Descricao' produto.id %}"><img class="Ds_img" src="{{produto.img.url}}" alt="" ></a>
+                        </div>
+                {% endif %}
+            {% endfor %}
+        
+            {% endfor %}
+        </section>
+        <hr>
+        <p class="Ds_p">Produtos que você pode gostar</p>
+        <section class="Ds_descr">
+            {% for produto in Prod %}
+                <div class="">
+                    <a href=""><img  class="Ds_img_desc" src="{{produto.img.url}}" alt="" ></a>
+                </div>
+            {% endfor %}
+        </section>
+    </div>
+   
+
+{% endblock %}

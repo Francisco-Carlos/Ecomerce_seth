@@ -1,0 +1,26 @@
+{% extends 'head_basic.html' %}
+{% block content %}
+{% load static %}
+    <p>Cadastro </p>
+    <form method="post" accept="{% url 'Cadastrar' %}">
+        {% csrf_token %}
+        <div>
+            <label for="nome">Nome</label>
+            <input type="text" name="Nome">
+        </div>
+        <div>
+            <label for="email"> Email </label>
+            <input type="email" name="Email">  
+        </div>
+        <div>
+            <label for="senha">Senha</label>
+            <input type="password" name="Senha">
+        </div>
+        <div>
+            <label for="senha_conf">Confirmar Senha</label>
+            <input type="password" name="Senha_1">
+        </div>
+        <button type="submit">Acessar</button>
+</form>
+
+{% endblock %}

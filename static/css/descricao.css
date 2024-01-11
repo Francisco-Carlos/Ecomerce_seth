@@ -1,0 +1,72 @@
+.descr_dados{
+    flex: 1 0 100px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap:10px;
+   justify-content: center;
+}
+
+.descr_cont{
+    padding: 25px;
+    display: flex;
+    overflow-y: scroll;
+    white-space: nowrap;
+    gap: 20px;
+    justify-content: center;
+    
+}
+.dados{
+    width: 40%;
+    font-size: 18px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.venda{
+    border: gray solid 1px;
+    border-radius: 3%;
+    height: 300px;
+    padding: 15px;
+}
+form{
+    padding: 30px;
+    font-size: 15px;
+
+}
+button{
+    margin-top: 15px;
+    padding: 15px;
+    width: 100px;
+    border-radius: 15%;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color:black;
+    color: white;
+    transition: 2s;
+}
+button:hover{
+    background-color: green ;
+    border-collapse: collapse;
+    border-color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.img_desc{
+    width: 400px;
+    border-radius: 5px;
+}
+.img_prod{
+    width: 300px;
+    height: 200px;
+    border-radius: 8px;
+
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    transition: 5s;
+
+}
+.img_prod:hover{
+    border-radius: 100px;
+}
+.hrs{
+    width: 500px;
+}
