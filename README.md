@@ -24,3 +24,16 @@ Administrador
   <li>Ganhos</li>
   <li>Fornecedor</li>
 </ul>
+
+
+<h2>Index</h2>
+<img src="https://github.com/Francisco-Carlos/Ecomerce_seth/assets/30003984/1ae14ddf-0782-4317-aab7-50382db7461d">
+<label>No inicio do site vai se deparar com essa tela, que serefere os produtos que tem no site, tem o logo da empresa , os menus 
+para poder navergar e cadastro eo login.</label>
+
+<h2>Caracteristicas</h2>
+<img src="https://github.com/Francisco-Carlos/Ecomerce_seth/assets/30003984/325908e5-b2b0-451c-a54a-b026fad84a56">
+<label>Quando o cliente clicar em uns dos menus, vai esta uma lista de todos o produtos referente além de um descricão e o valor do produto</label>
+
+<h2>Descrição</h2>
+<img src="https://github.com/Francisco-Carlos/Ecomerce_seth/assets/30003984/09e66914-a03d-4ba4-be15-b32f2e210c8a">
