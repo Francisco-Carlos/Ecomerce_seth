@@ -46,8 +46,6 @@ Abaixo esta uma lista de possiveis produtos que o clinte tenta vontade de compra
 <label>Essa parte e referente a quando a compra de um produto o cliente pode ver, o produto comprado e mostra para ele os produtudos ja adquiridos,
 mais abaixo continua mostrando os produtos que possivelmente o clinte quera adquirir</label>
 
-<br>
-<p><strong>Apartir dessa parte sera mostrado o fluxo de caixa e controle de estoque.</strong></p>
 
 <h2>Estoque</h2>
 <img src="https://github.com/Francisco-Carlos/Ecomerce_seth/assets/30003984/41731ae3-a601-4650-997c-8447c4979ea0">
@@ -59,4 +57,10 @@ Dessa forma o administrador do site tem todo o controle dos produtos que tem e q
 <img src="https://github.com/Francisco-Carlos/Ecomerce_seth/assets/30003984/de5a3fe0-17fb-4219-9fbf-eb7abe547923">
 <label>Essa tela representa os ganhos da empresa mostrando o produto vendido o valor adquirido e o dia.
 Dessa forma fica mais facil  de ver quais foram os dias mais lucrativos.</label>
+
+<h2>Fornecedores</h2>
+<img src="https://github.com/Francisco-Carlos/Ecomerce_seth/assets/30003984/8aaf0659-7642-4605-8e42-42ab984e14bd" >
+<p> Essa parte e mais simples ela foca em reabastecer o estoque , podendo escolher o protudo que deseja comprar e a quantidade requerida.
+No momento que faz a compra ja e possivel ver no estoque ele mudando.</p>
+
 
