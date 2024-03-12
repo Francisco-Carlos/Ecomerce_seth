@@ -37,3 +37,12 @@ para poder navergar e cadastro eo login.</label>
 
 <h2>Descrição</h2>
 <img src="https://github.com/Francisco-Carlos/Ecomerce_seth/assets/30003984/09e66914-a03d-4ba4-be15-b32f2e210c8a">
+<label>Cada produto tem suas informações como descrição e valor e possivel fazer compra do produto caso nao esteja cadastrado vai ter um botão para , fazer login.
+Abaixo esta uma lista de possiveis produtos que o clinte tenta vontade de comprar.</label>
+
+<h2>Dashbord</h2>
+
+<img  src="https://github.com/Francisco-Carlos/Ecomerce_seth/assets/30003984/e625adf9-8d0f-411f-af1a-3cac1d5a3252">
+<label>Essa parte e referente a quando a compra de um produto o cliente pode ver, o produto comprado e mostra para ele os produtudos ja adquiridos,
+mais abaixo continua mostrando os produtos que possivelmente o clinte quera adquirir</label>
+
